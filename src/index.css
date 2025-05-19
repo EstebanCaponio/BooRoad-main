@@ -37,6 +37,15 @@ nav li a.active {
   font-weight: 700;
 }
 
+/* ALTEZZE */
+.max-w-500 {
+  max-width: 500px;
+}
+
+.max-w-600 {
+  max-width: 600px;
+}
+
 /* BOTTONE */
 .btn-outline-primary {
   transition: background-color 0.3s ease;
