@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import TripContext from "../context/TripContext";
+import CardTrip from "../components/CardTrip";
 
 function TripDetails() {
   const { id } = useParams();
@@ -37,6 +38,7 @@ function TripDetails() {
                 </div>
               </div>
             </div>
+            <CardTrip />
           </div>
         ) : null
       )}
