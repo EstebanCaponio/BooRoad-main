@@ -23,5 +23,5 @@ Questo progetto è stato realizzato da:
 - Linda Tancini (https://github.com/LindaTancini)
 - Andrea Rispoli (https://github.com/AndreaRispoli97)
 - Esteban Caponio (https://github.com/EstebanCaponio)
-- Vincenzo Tulimieri
-- Gianfranco Mendoza
+- Vincenzo Tulimieri (https://github.com/VincenzoTulimieri)
+- Gianfranco Mendoza (https://github.com/mendozagianfranco)

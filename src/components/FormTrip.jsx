@@ -37,8 +37,6 @@ export default function FormTrip({ setTripList, tripList }) {
         setaddTrip(initialDate);
     };
 
-    // console.log(partecipantsList)
-
     return (
         <>
             <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">

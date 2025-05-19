@@ -37,39 +37,8 @@ export default function FormUser({ setPartecipantsList, partecipantsList }) {
         setAddUser(initialDate);
     };
 
-    // console.log(partecipantsList)
-
     return (
         <>
-            {/* <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Aggiungi partecipante
-            </button>
-            <div className="collapse" id="collapseExample">
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Nome:</label>
-                        <input type="text" value={addUser.name} onChange={handleFormData} name="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci il nome" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Cognome:</label>
-                        <input type="text" value={addUser.surname} onChange={handleFormData} name="surname" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci il cognome" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Numero di telefono:</label>
-                        <input type="text" value={addUser.phone_number} onChange={handleFormData} name="phone_number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci il numero di telefono" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Emai:</label>
-                        <input type="email" value={addUser.email} onChange={handleFormData} name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci l'email" required />
-                    </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor="exampleInputEmail1">Codice fiscale:</label>
-                        <input type="text" value={addUser.CF} onChange={handleFormData} name="CF" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci il codice fiscale" required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
-            </div> */}
-
             <div className="container mt-4">
                 <div className="d-flex justify-content-center mb-3">
                     <button

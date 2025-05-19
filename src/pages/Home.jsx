@@ -10,8 +10,6 @@ function HomePage() {
   const { ArrayTrip } = useContext(TripContext);
   const { id } = useParams();
 
-  // console.log(ArrayTrip);
-
   const [tripList, setTripList] = useState([]);
 
   useEffect(() => {
