@@ -15,7 +15,7 @@ function TripDetails() {
             <div className="row g-0">
               <div className="col-md-6">
                 <img
-                  src={`/public/${trip.image}`}
+                  src={`/${trip.image}`}
                   alt={trip.destination}
                   className="img-fluid rounded-start h-100 object-fit-cover"
                 />
