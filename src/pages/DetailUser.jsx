@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import TripContext from "../context/TripContext";
 import { useParams } from "react-router-dom";
+import FormUser from "../components/FromUser";
 
 
 function DetailUser() {
@@ -31,8 +32,12 @@ function DetailUser() {
 
   return (
     <>
+
       <div className="container my-4">
-        <form onSubmit={searchName} className="row g-3 mb-3">
+
+        <FormUser setPartecipantsList={setPartecipantsList} partecipantsList={partecipantsList} />
+
+        <form onSubmit={searchName} className="row g-3 mb-3 mt-3">
           <div className="col-md-8">
             <input
               value={filterName}
@@ -51,10 +56,10 @@ function DetailUser() {
         {partecipantsList.length > 0 ? (
           partecipantsList.map((e) => (
             <div key={e.user_id} className="card text-center mb-4">
-              <div className="card-header">{`${e.surname} ${e.name}`}</div>
+              <div className="card-header"><strong>{`${e.surname} ${e.name}`}</strong></div>
               <div className="card-body">
-                <p className="card-text">Email: {e.email}</p>
-                <p className="card-text">Numero di telefono: {e.phone_number}</p>
+                <p className="card-text">Email: <a href="">{e.email}</a></p>
+                <p className="card-text">Numero di telefono: <a href="">{e.phone_number}</a></p>
                 <p className="card-text">Codice Fiscale: {e.CF}</p>
               </div>
             </div>
