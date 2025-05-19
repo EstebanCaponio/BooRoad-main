@@ -10,18 +10,27 @@ function DetailUser() {
   const { name, surname } = ArrayTrip[id - 1].partecipants[id - 1];
   console.log(name, surname)
 
+  const [partecipantsList, usePartecipantsList] = useState(ArrayTrip[id - 1].partecipants);
   const [filterName, setFilterName] = useState('');
 
+  function searchName(e) {
+    e.preventDefault();
 
-  const currentTrip = ArrayTrip[id - 1];
-  console.log(currentTrip)
-  const partecipants = currentTrip.partecipants;
+    if (filterName !== '') {
+      results = results.filter(arr => arr.partecipants.toLowerCase().trim().includes(filterName.toLowerCase().trim()))
+    }
+  }
+
+
+  // const currentTrip = ArrayTrip[id - 1];
+  // console.log(currentTrip)
+  // const partecipants = currentTrip.partecipants;
 
 
   return (
     <>
       <div className="container my-4">
-        <form className="row g-3 mb-3">
+        <form onSubmit={searchName} className="row g-3 mb-3">
           <div className="col-md-8">
             <input
               value={filterName}
@@ -37,8 +46,8 @@ function DetailUser() {
             </button>
           </div>
         </form>
-        {partecipants.length > 0 ? (
-          partecipants.map((e) => (
+        {partecipantsList.length > 0 ? (
+          partecipantsList.map((e) => (
             <div key={e.user_id} className="card text-center mb-4">
               <div className="card-header">{`${e.surname} ${e.name}`}</div>
               <div className="card-body">
