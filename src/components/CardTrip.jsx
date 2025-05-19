@@ -8,11 +8,11 @@ function CardTrip() {
             <div className="card border-primary shadow-lg">
                 <div className="card-header bg-primary text-white">
                     🌏
-                    <strong>{'<<<'} Qui verrà visualizzato il viaggio {'>>>'}</strong>
+                    <strong>{'<<<'} DETTAGLI {'>>>'}</strong>
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">🗓️ Data di ritrovo</h5>
-                    <p className="card-text"><strong>15 Luglio 2025 - ore 09:00</strong></p>
+                    <p className="card-text"><strong>19 maggio 2025 - ore 09:00</strong></p>
 
                     <h5 className="card-title">📌 Punto di ritrovo</h5>
                     <p className="card-text">
