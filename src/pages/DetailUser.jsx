@@ -2,30 +2,32 @@ import { useContext, useEffect, useState } from "react";
 import TripContext from "../context/TripContext";
 import { useParams } from "react-router-dom";
 
+
 function DetailUser() {
   const { id } = useParams();
   const { ArrayTrip } = useContext(TripContext);
 
-
-  const { name, surname } = ArrayTrip[id - 1].partecipants[id - 1];
-  console.log(name, surname)
-
-  const [partecipantsList, usePartecipantsList] = useState(ArrayTrip[id - 1].partecipants);
   const [filterName, setFilterName] = useState('');
+  const [partecipantsList, setPartecipantsList] = useState([]);
+
+  useEffect(() => {
+    if (ArrayTrip && ArrayTrip[id - 1] && ArrayTrip[id - 1].partecipants) {
+      setPartecipantsList(ArrayTrip[id - 1].partecipants);
+    }
+  }, [ArrayTrip, id]);
 
   function searchName(e) {
     e.preventDefault();
 
-    if (filterName !== '') {
-      results = results.filter(arr => arr.partecipants.toLowerCase().trim().includes(filterName.toLowerCase().trim()))
+    if (ArrayTrip && ArrayTrip[id - 1] && ArrayTrip[id - 1].partecipants) {
+      const filteredResults = ArrayTrip[id - 1].partecipants.filter(arr =>
+        `${arr.name}${arr.surname}`.toLowerCase().trim().includes(filterName.toLowerCase().trim())
+      );
+      setPartecipantsList(filteredResults);
+    } else {
+      setPartecipantsList([]);
     }
   }
-
-
-  // const currentTrip = ArrayTrip[id - 1];
-  // console.log(currentTrip)
-  // const partecipants = currentTrip.partecipants;
-
 
   return (
     <>
@@ -59,7 +61,7 @@ function DetailUser() {
           ))
         ) : (
           <div>
-            <h1>Nessun Viaggio disponibile</h1>
+            <h1>Nessun partecipante trovato</h1>
           </div>
         )}
       </div >
