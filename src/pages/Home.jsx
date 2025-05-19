@@ -1,21 +1,32 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import TripContext from "../context/TripContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FormTrip from "../components/FormTrip";
 
 function HomePage() {
   console.log("homepage");
 
   const { ArrayTrip } = useContext(TripContext);
+  const { id } = useParams();
 
-  console.log(ArrayTrip);
+  // console.log(ArrayTrip);
+
+  const [tripList, setTripList] = useState([]);
+
+  useEffect(() => {
+    if (ArrayTrip) {
+      setTripList(ArrayTrip);
+    }
+  }, [ArrayTrip, id]);
 
   return (
     <>
       <div className="container my-5">
+        <FormTrip tripList={tripList} setTripList={setTripList} />
         <h1 className="mb-4">Viaggi in programma:</h1>
         {ArrayTrip && ArrayTrip.length > 0 ? (
-          ArrayTrip.map((e) => (
+          tripList.map((e) => (
             <div key={e.id} className="card mb-3">
               <div className="row g-0">
                 <div className="col-md-4">
