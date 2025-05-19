@@ -1,0 +1,55 @@
+nav {
+  padding: 30px 20px;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  background-color: rgba(37, 36, 36, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+nav li a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav li a.active {
+  background-color: #d10b0b;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* BOTTONE */
+.btn-outline-primary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-outline-secondary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #5a6268;
+}
