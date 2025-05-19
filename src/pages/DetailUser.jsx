@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import TripContext from "../context/TripContext";
 import { useParams } from "react-router-dom";
 
@@ -6,7 +6,13 @@ function DetailUser() {
   const { id } = useParams();
   const { ArrayTrip } = useContext(TripContext);
 
-  // console.log(currentTrip)
+
+  const { name, surname } = ArrayTrip[id - 1].partecipants[id - 1];
+  console.log(name, surname)
+
+  const [filterName, setFilterName] = useState('');
+
+
   const currentTrip = ArrayTrip[id - 1];
   console.log(currentTrip)
   const partecipants = currentTrip.partecipants;
@@ -18,6 +24,8 @@ function DetailUser() {
         <form className="row g-3 mb-3">
           <div className="col-md-8">
             <input
+              value={filterName}
+              onChange={e => { setFilterName(e.target.value) }}
               type="text"
               className="form-control"
               placeholder="Cerca partecipante"
@@ -31,7 +39,7 @@ function DetailUser() {
         </form>
         {partecipants.length > 0 ? (
           partecipants.map((e) => (
-            <div key={e.user_id} className="card text-center">
+            <div key={e.user_id} className="card text-center mb-4">
               <div className="card-header">{`${e.surname} ${e.name}`}</div>
               <div className="card-body">
                 <p className="card-text">Email: {e.email}</p>
