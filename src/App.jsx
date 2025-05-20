@@ -7,18 +7,19 @@ import ArrayTrip from "./data/ArrayTrip";
 import ArrayOperators from "./data/ArrayOperators";
 import DetailTrip from "./pages/DetailTrip";
 import DetailUser from "./pages/DetailUser";
+import OperatorsPage from "./pages/OperatorsPage";
 
 function App() {
   return (
     <>
-      <TripContext.Provider value={{ ArrayTrip }}>
+      <TripContext.Provider value={{ ArrayTrip, ArrayOperators }}>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>
               <Route index element={<HomePage />} />
               <Route path="/trip/:id" element={<DetailTrip />} />
               <Route path="/user/:id" element={<DetailUser />} />
-              <Route path="/operators" element={<div>Operatori</div>} />
+              <Route path="/operators" element={<OperatorsPage />} />
               <Route path="/contacts" element={<div>contatti agenzia</div>} />
             </Route>
             <Route path="*" element={<div>404</div>} />
