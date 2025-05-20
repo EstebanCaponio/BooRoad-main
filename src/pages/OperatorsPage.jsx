@@ -4,10 +4,9 @@ import TripContext from "../context/TripContext";
 function OperatorsPage() {
 
     const { ArrayOperators } = useContext(TripContext);
-    console.log(ArrayOperators)
+    // console.log(ArrayOperators)
 
     return (
-
         <>
             <div className="container my-4">
 

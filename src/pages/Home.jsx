@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FormTrip from "../components/FormTrip";
 
 function HomePage() {
-  console.log("homepage");
+  // console.log("homepage");
 
   const { ArrayTrip } = useContext(TripContext);
   const { id } = useParams();
